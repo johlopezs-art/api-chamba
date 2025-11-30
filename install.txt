@@ -1,0 +1,61 @@
+==================================================
+GUÍA DE INSTALACIÓN - API CHAMBANOW (FastAPI)
+
+Sigue estos pasos para ejecutar el servidor en tu computadora local.
+
+PRERREQUISITOS:
+
+Tener Python instalado (versión 3.9 o superior).
+
+Tener Git instalado.
+
+PASO 1: CREAR EL ENTORNO VIRTUAL
+
+El entorno virtual sirve para aislar las librerías de este proyecto.
+Abre una terminal en la carpeta del proyecto y ejecuta:
+
+python -m venv venv
+
+PASO 2: ACTIVAR EL ENTORNO
+
+Debes activar el entorno antes de instalar nada.
+
+En Windows (PowerShell):
+.\venv\Scripts\activate
+
+En Windows (CMD):
+venv\Scripts\activate
+
+En Mac / Linux:
+source venv/bin/activate
+
+(Sabrás que está activo porque verás un "(venv)" al inicio de la línea de comandos).
+
+PASO 3: INSTALAR LAS DEPENDENCIAS
+
+Una vez activado el entorno, instala todas las librerías necesarias con un solo comando:
+
+pip install -r requirements.txt
+
+(Esto leerá el archivo requirements.txt e instalará FastAPI, SQLAlchemy, Uvicorn, etc.).
+
+PASO 4: INICIAR EL SERVIDOR
+
+Para correr la API y que sea accesible desde tu celular o red local:
+
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+NOTAS IMPORTANTES
+
+Base de Datos:
+Al ejecutar el servidor por primera vez, se creará automáticamente
+el archivo 'app_chamba.db' con todas las tablas vacías.
+
+IP Local:
+Si vas a conectar una App Móvil, asegúrate de cambiar la IP en el
+servicio de tu App (api.service.ts) por la IP de tu computadora
+(ej: 192.168.1.XX).
+
+Error de Scripts en Windows:
+Si al activar el entorno te sale error de permisos, ejecuta esto en PowerShell como Admin:
+Set-ExecutionPolicy RemoteSigned
