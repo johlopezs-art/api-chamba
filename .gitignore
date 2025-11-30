@@ -1,0 +1,22 @@
+--- Entornos Virtuales ---
+
+venv/
+env/
+.env
+
+--- Python ---
+
+pycache/
+*.py[cod]
+
+--- Base de Datos (No subir la local) ---
+
+*.db
+*.sqlite3
+app_chamba.db
+
+--- Logs y Configs de Editor ---
+
+.vscode/
+.idea/
+*.log
